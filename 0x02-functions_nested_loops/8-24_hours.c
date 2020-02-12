@@ -1,5 +1,5 @@
 #include "holberton.h"
-/*
+/**
  *jack_bauer - 24 hours
  *
  *Return: no return
