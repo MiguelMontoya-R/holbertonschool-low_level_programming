@@ -17,7 +17,7 @@ int main(void)
 	{
 		putchar(i);
 	}
-
+/*here should be the counter*/
 	printf("Infinite loop avoided! \\o/\n");
 
 	return (0);
