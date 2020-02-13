@@ -17,7 +17,7 @@ int main(void)
 	{
 		putchar(i);
 	}
-/**this lines is executed forever because of missing counter i++*/
+/**counter i++*/
 	printf("Infinite loop avoided! \\o/\n");
 
 	return (0);
