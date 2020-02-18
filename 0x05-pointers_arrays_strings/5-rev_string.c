@@ -7,7 +7,7 @@
   */
 void rev_string(char *s)
 {
-	int counter, lower; 
+	int counter, lower;
 	int aux;
 
 	counter = 0;
@@ -21,7 +21,7 @@ void rev_string(char *s)
 	{
 		aux = s[lower];
 		s[lower] = s[counter - 1];
-		s[counter -1] = aux;
+		s[counter - 1] = aux;
 		lower++;
 		counter--;
 	}
