@@ -2,7 +2,7 @@
 /**
   *puts2 - print integers odds
   *
-  *@str
+  *@str: variable of nums
   *Return: void
   */
 void puts2(char *str)
@@ -12,7 +12,7 @@ void puts2(char *str)
 	while (str[somenums] != '\0')
 	{
 		if (str[somenums] % 2 == 0)
-		{ 
+		{
 		_putchar(str[somenums]);
 		}
 		somenums++;
