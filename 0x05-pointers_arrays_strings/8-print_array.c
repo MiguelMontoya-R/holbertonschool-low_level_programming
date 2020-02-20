@@ -9,10 +9,10 @@
   */
 void print_array(int *a, int n)
 {
-	int counter= 0;
+	int counter = 0;
 
 	while (counter < n)
-	{	
+	{
 		if (counter != n - 1)
 		{
 		printf("%d, ", a[counter]);
