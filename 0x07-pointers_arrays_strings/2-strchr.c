@@ -5,6 +5,7 @@
   *
   *@s: string which may content the c character
   *@c: character which is being searched in the string s
+  *Return: string after the c character or NULL if is not there
   */
 char *_strchr(char *s, char c)
 {
