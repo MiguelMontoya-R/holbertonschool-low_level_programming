@@ -1,8 +1,12 @@
 #include "holberton.h"
 /**
+ *comparison - function where the comparison is being done
  *
+ *@n: value that they give us to get the arithmetic
+ *@i: value that we will find doing the multiplication
+ *Return: recursion and increasing of variable i
  */
-int tmp(int n, int i)
+int comparison(int n, int i)
 {
 	if (n == (i * i))
 	{
@@ -12,9 +16,15 @@ int tmp(int n, int i)
 	{
 		return (-1);
 	}
-	return (tmp(n, i + 1));
+	return (comparison(n, i + 1));
 }
+/**
+ *_sqrt_recursion - is the function of the square root
+ *
+ *@n: value that they give us to get the root
+ *Return: the result of the recursion in tmp function
+ */
 int _sqrt_recursion(int n)
 {
-	return (tmp(n, 1));
+	return (comparison(n, 1));
 }
