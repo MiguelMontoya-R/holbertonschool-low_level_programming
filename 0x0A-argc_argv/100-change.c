@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *main - give the change
+ *main - print minimal coins to give change
  *
  *@argc: counter
- *argv: vector
+ *@argv: vector
  *Return: 0 if is negative
  */
 int main(int argc, char *argv[])
