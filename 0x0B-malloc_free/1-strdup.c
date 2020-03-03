@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
+ *_strdup - duplicate a string in another location
  *
+ *@str: pointer to string
+ *Return: NULL is there's any error and p pointer to new location of copied
+ * string
  */
 char *_strdup(char *str)
 {
@@ -28,12 +32,11 @@ char *_strdup(char *str)
 		{
 			p[j] = str[j];
 		}
+		p[j] = '\0';
 	}
-	else if (p == NULL)
+	else
 	{
 		return (NULL);
 	}
-
 	return (p);
-	free(p);
 }
