@@ -40,6 +40,7 @@ char *str_concat(char *s1, char *s2)
 		{
 			p[g++] = s2[m];
 		}
+		p[g] = '\0';
 	}
 	else
 	{
