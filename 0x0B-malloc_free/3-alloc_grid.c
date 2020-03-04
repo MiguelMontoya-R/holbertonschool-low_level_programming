@@ -31,16 +31,16 @@ int **alloc_grid(int width, int height)
 			{
 				while (h < height)
 				{
-					free (array[h]);
+					free(array[h]);
 					      h++;
 				}
-				free (array);
+				free(array);
 				return (NULL);
 			}
 			h++;
 		}
 		w = 0;
-		while (w <height)
+		while (w < height)
 		{
 			array[w][w] = 0;
 			w++;
