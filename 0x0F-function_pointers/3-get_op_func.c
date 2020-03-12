@@ -2,7 +2,10 @@
 #include <stdio.h>
 #include "3-calc.h"
 /**
+ * get_op_func - match function
+ * @s: operator
  *
+ * Return: if fails NULL
  */
 int (*get_op_func(char *s))(int, int)
 {
