@@ -2,18 +2,26 @@
 #include <stdlib.h>
 #include "3-calc.h"
 /**
- *
+ * main - calculator
+ * @argc: argument counter
+ * @argv: argument vector or pointer array
+ * Return: 0 or Error
  */
 int main(int argc, char *argv[])
 {
 	int a, b, r;
 
-	int(*calc)(int, int);
+	int (*calc)(int, int);
 
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
+	}
+	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
 	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
