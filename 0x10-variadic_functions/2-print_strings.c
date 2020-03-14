@@ -19,7 +19,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		string = va_arg(ap, char *);
 /* if *string id != NULL */
-		if (*string)
+		if (string)
 		{
 			printf("%s", string);
 		}
