@@ -28,7 +28,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("(nil)");
 		}
 /* printing separator only if is != NULL and just before the last string */
-		if (*separator && i < n - 1)
+		if (separator && i < n - 1)
 		{
 			printf("%s", separator);
 		}
