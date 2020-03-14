@@ -16,9 +16,9 @@ void print_all(const char * const format, ...)
 	int n = 0, m = 0, comma = 0;
 
 	va_start(ap, format);
-	while (format[m])
+	while (format && format[m])
 		m++;
-	while (format[n])
+	while (format && format[n])
 	{
 		switch (format[n])
 		{
