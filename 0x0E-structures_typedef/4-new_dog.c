@@ -39,11 +39,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 		(*nd).name[i] = name[i];
 		i++;
 	}
+	(*nd).name[i] = '\0';
 	i = 0;
 	while (i < strlen(owner))
 	{
 		(*nd).owner[i] = owner[i];
 		i++;
 	}
+	(*nd).owner[i] = '\0';
 	return (nd);
 }
