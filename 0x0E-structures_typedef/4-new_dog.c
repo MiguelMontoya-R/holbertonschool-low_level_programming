@@ -36,13 +36,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	while (i < strlen(name))
 	{
-		(*nd).name = name;
+		(*nd).name[i] = name[i];
 		i++;
 	}
 	i = 0;
 	while (i < strlen(owner))
 	{
-		(*nd).owner = owner;
+		(*nd).owner[i] = owner[i];
 		i++;
 	}
 	return (nd);
