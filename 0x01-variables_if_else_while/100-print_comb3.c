@@ -20,8 +20,10 @@ int main(void)
 			putchar(j);
 
 			if (counter < 89)
-			putchar(',');
-			putchar(' ');
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 
 	}
