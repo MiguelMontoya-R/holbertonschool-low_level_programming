@@ -16,7 +16,7 @@ int main(void)
 			{
 				i = (counter / 10) + '0';
 				j = (counter % 10) + '0';
-				k = (counter / 10) + '0';
+				k = (counter2 / 10) + '0';
 				l = (counter2 % 10) + '0';
 				putchar(i);
 				putchar(j);
