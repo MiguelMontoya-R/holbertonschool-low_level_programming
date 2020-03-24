@@ -9,7 +9,7 @@ int pop_listint(listint_t **head)
 	listint_t *delete;
 	int n;
 
-	if (head == NULL)
+	if (*head == NULL)
 		return (0);
 
 	n = (**head).n; /* Stor the head->n (data) in the var n */
