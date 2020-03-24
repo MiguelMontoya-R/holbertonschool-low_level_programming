@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <assert.h>
 /**
  * get_nodeint_at_index - get the linked list "nth" node
  * @head: pointer to linkes list's head
@@ -8,16 +7,16 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int i = 0;
-	listint_t *tmp = head;
+	unsigned int i = 0; /* counter */
+	listint_t *tmp = head; /* create tmp pointer */
 
 	while (tmp != NULL)
 	{
 		if (i == index)
-			return (tmp);
+			return (tmp); /* finding the match with the index */
 
 		i++;
 		tmp = (*tmp).next;
 	}
-	assert (0);
+	return (0);
 }
