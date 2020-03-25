@@ -7,15 +7,14 @@
 int sum_listint(listint_t *head)
 {
 	int sum = 0;
-	listint_t *tmp = head;
 
 	if (head == NULL)
 		return (0);
 
-	while (tmp)
+	while (head)
 	{
-		sum += (*tmp).n; /* sum the data copied in tmp */
-		tmp = (*tmp).next; /*point tmp to the next node */
+		sum += (*head).n; /* sum the data in node */
+		head = (*head).next; /*point head to the next node */
 	}
 	return (sum);
 }
