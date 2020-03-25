@@ -28,6 +28,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	tmp = *head;
 	while (counter < idx - 1)
 	{
+		if (tmp == NULL)
+			return (NULL);
 		counter++;
 		tmp = (*tmp).next; /* going 'til index */
 	}
