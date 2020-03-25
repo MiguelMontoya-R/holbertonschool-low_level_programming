@@ -17,17 +17,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	new_node = malloc(sizeof(listint_t)); /* allocate new node */
 
-	while (tmp)
+	if (new_node == NULL)
+		return (NULL);
+
+	(*new_node).n = n; /* set new_node */
+	(*new_node).next = NULL;
+
+	while (counter < idx - 1)
 	{
-		if (counter == idx - 1)
-		{
-			new_node = tmp; /* now tmp points to tmp->next */
-			(*new_node).n = n; /* copying data in new node */
-			(*new_node).next = (*tmp).next; /* connecting to next*/
-			return (new_node);
-		}
 		counter++;
-		tmp = (*tmp).next;
+		tmp = (*tmp).next; /* going 'til index */
 	}
+
+	(*new_node).next = (*tmp).next; /* setting pointer to next node */
+	(*tmp).next = new_node; /* setting pointer to new node */
+
 	return (new_node);
 }
