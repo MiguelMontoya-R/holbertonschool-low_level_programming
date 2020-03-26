@@ -22,5 +22,5 @@ In this folder are contain exercises for Holberton School.
 
 # Learning Objectives
 
-*How to use linked lists
-*Start to look for the right source of information without too much help
+* How to use linked lists
+* Start to look for the right source of information without too much help
