@@ -23,12 +23,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		aux = aux->next; /* moving in the linked list 'til get at ... */
 		i++; /*... the previous node (index - 1) */
+		if (aux == NULL)
+			return (-1); /* if index is greater than the list */
 	}
-	if (aux == NULL || aux->next == NULL)
-		return (-1); /* if index is greater than the linked list */
 
-	next = aux->next->next;
-	free(aux->next);
+	next = aux->next->next; /* move tmp->next to next node */
+	free(aux->next); /* free the index list */
 
 	aux->next = next;
 	return (1);
