@@ -6,7 +6,10 @@
 #include <stdlib.h>
 #include <sys/uio.h>
 /**
- *
+ * read_textfile - reads and prints textfile in terminal
+ * @filename: filename to be red and printed
+ * @letters: buffer size
+ * Return: size of the printed text or 0 if it fails.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
