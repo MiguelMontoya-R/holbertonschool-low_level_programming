@@ -14,7 +14,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd, fd1, fd2, fd3, fd4, fd5;
+	int file_from, read_from, file_to, write_to, cle_t, cle_f;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -23,45 +23,28 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
+	file_from = open(argv[1], O_RDONLY);
+	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	while (read_from > 0)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		read_from = read(file_from, buffer, 1024);
+		if (file_from == -1 || read_from == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		write_to = write(file_to, buffer, read_from);
+		if (file_to == -1 || write_to == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
-
-	fd1 = read(fd, buffer, 1024);
-	if (fd1 == -1)
+	cle_t = close(file_from);
+	cle_f = close(file_to);
+	if (cle_t == -1 || cle_f == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	fd2 = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	if (fd2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-
-	fd3 = write(fd2, buffer, fd1);
-	if (fd3 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-
-	fd4 = close(fd);
-	if (fd4 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd4);
-		exit(100);
-	}
-
-	fd5 = close(fd2);
-	if (fd5 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd5);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cle_f);
 		exit(100);
 	}
 	return (1);
