@@ -34,6 +34,11 @@ int main(int argc, char *argv[])
 	while (read_from > 0)
 	{
 		read_from = read(file_from, buffer, 1024);
+		if (read_from == -1)
+		{
+			dprintf(STDERR_FILENO, "%s %s\n", err, argv[1]);
+			exit(98);
+		}
 		write_to = write(file_to, buffer, read_from);
 		if (file_to == -1 || write_to == -1)
 		{
