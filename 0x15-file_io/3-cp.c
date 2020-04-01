@@ -15,8 +15,7 @@
 int main(int argc, char *argv[])
 {
 	int file_from, read_from, file_to, write_to, cle_t, cle_f;
-	char buffer[1025], err[] = "Error: Can't read from file";
-	char erw[] = "Error: Can't write to";
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -26,7 +25,7 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "%s %s\n", err, argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
@@ -35,13 +34,13 @@ int main(int argc, char *argv[])
 		read_from = read(file_from, buffer, 1024);
 		if (read_from == -1)
 		{
-			dprintf(STDERR_FILENO, "%s %s\n", err, argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 		write_to = write(file_to, buffer, read_from);
 		if (file_to == -1 || write_to == -1)
 		{
-			dprintf(STDERR_FILENO, "%s %s\n", erw, argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
