@@ -10,7 +10,7 @@
  * main - copy file_from file_to
  * @argc: counter of arguments given
  * @argv: arguments vector (string)
- * Return: 1
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
