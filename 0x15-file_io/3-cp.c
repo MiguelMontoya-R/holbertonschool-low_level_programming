@@ -14,7 +14,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file_from, read_from, file_to, write_to, cle_t, cle_f;
+	int file_from, read_from = 1, file_to, write_to, cle_t, cle_f;
 	char buffer[1024];
 
 	if (argc != 3)
