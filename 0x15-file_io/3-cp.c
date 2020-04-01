@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -13,7 +14,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, fd2, fd3, fd4, fd5;
+	int fd, fd1, fd2, fd3, fd4, fd5;
 	char buffer[1024];
 
 	if (argc != 3)
