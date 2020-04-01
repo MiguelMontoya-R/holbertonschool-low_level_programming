@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
 	int file_from, read_from, file_to, write_to, cle_t, cle_f;
-	char buffer[1024], err[] = "Error: Can't read from file";
+	char buffer[1025], err[] = "Error: Can't read from file";
 	char erw[] = "Error: Can't write to";
 
 	if (argc != 3)
@@ -53,5 +53,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd -1\n");
 		exit(100);
 	}
+
 	return (1);
 }
