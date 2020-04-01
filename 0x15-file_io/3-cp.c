@@ -23,14 +23,12 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "%s %s\n", err, argv[1]);
 		exit(98);
 	}
-
 	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	while (read_from > 0)
 	{
@@ -54,6 +52,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd -1\n");
 		exit(100);
 	}
-
-	return (1);
+	return (0);
 }
