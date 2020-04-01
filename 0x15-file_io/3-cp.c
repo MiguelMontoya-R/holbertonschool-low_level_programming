@@ -45,10 +45,8 @@ int main(int argc, char *argv[])
 		}
 	}
 	cle_f = close(file_from);
-	if (cle_f == -1)
-		exit(100);
 	cle_t = close(file_to);
-	if (cle_t == -1)
+	if (cle_t == -1 || cle_t == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cle_f);
 		exit(100);
