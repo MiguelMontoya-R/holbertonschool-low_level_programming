@@ -21,4 +21,7 @@ char *_strncpy(char *dest, char *src, int n)
 	while (c < n && src[c] != '\0')
 	{
 		dest[counter] = src[c];
-
+		n++;
+	}
+	return (dest);
+}
