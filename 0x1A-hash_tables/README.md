@@ -17,8 +17,8 @@ In this folder is the project for Holberton School about has tables in C program
 * More Info
 * Data Structures
 * Please use these data structures for this project:
-´´´
-/**
+
+´´´/**
  * struct hash_node_s - Node of a hash table
  *
  * @key: The key, string
@@ -45,8 +45,8 @@ typedef struct hash_table_s
 {
      unsigned long int size;
      hash_node_t **array;
-} hash_table_t;
-´´´
+} hash_table_t;´´´
+
 ## Tests
 * We strongly encourage you to work all together on a set of tests
 
