@@ -17,6 +17,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (ht->size == index)
 		return (0);
-	current_key->next = current_node;
+ 
 
 }
