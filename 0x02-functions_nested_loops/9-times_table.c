@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
- * times_table
+ * times_table - prints the tmes table
+ * Return: void
  */
 void times_table(void)
 {
@@ -12,36 +13,23 @@ void times_table(void)
 		{
 			result = i * j;
 
-			if (j == 9 && result > 10)
-			{
-				_putchar(' ');
-				_putchar(result / 10 + '0');
-				_putchar(result % 10 + '0');
-			}
-			else if (j == 9 && result < 10)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(result + '0');
-			}
-			else if (j == 0)
+			if (j == 0)
 			{
 				_putchar(result + '0');
-				_putchar(',');
 			}
 			else if (result < 10)
 			{
+				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(result + '0');
-				_putchar(',');
 			}
-			else if (result > 10)
+			else if (result >= 10)
 			{
+				_putchar(',');
 				_putchar(' ');
 				_putchar(result / 10 + '0');
 				_putchar(result % 10 + '0');
-				_putchar(',');
 			}
 		}
 		_putchar('\n');
